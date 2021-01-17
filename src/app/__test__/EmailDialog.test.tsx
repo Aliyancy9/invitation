@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { render, waitForElement, fireEvent,act } from '@testing-library/react'
+import { wait, render, waitForElement, fireEvent,act } from '@testing-library/react'
 
 import registerEmailMock from '../__mocks__/registerEmailMock'
 
@@ -42,6 +42,21 @@ describe('EmailDialog', () => {
     expect(confirmedEmailElement).toBeTruthy()
 
 })
+    it('should show error message if fields are not valid', async () => {
+        const { getAllByText, getByText, getByTestId } = renderTest(<EmailDialog {...baseProps} />)
+       
+        const nameInput = getByTestId('name-input').querySelector('input')
+
+        act(() => {fireEvent.change(nameInput, { target: { value: 'doris' }})})
+
+        const addButton = getByText('Send')
+        fireEvent.click(addButton)
+      
+        await wait (()=> {
+            expect(getAllByText('Required')).not.toBeNull()
+        })
+
+    },10000)
 
     it('should only Submit the form if the values are correct', async () => {
     const { getByText, getByTestId } = renderTest(<EmailDialog {...baseProps} />)
