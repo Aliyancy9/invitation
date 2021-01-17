@@ -1,15 +1,17 @@
 # Email Invitation App
 ## Overview
-The idea of this app is to send email invitation to the customer with email validation
-steps to play around
-1. click request invitation: 
-2. in the dialog and fill in the required field
-3. if all the fields are valid, make a http post request to the backend, otherwise highlight the invalid field
-4. when sending email, the dialog is disabled
-5. if everything works fine, the success dialog will pop up 
-6. click `ok` will close the dialog
+The purpose of this app is to send email invitation to the customer with email validation
+Steps to play around
+
+1. Click request invitation
+2. Fill in three required fields
+3. If all the fields are valid, fire http post request to the server otherwise highlight the invalid field
+4. when sending email, all the input fields are disabled
+5. If everything works fine, the success dialog will pop up otherwise the server will return error message showing below
+6. Click 'ok' will close the dialog
 
 ## Demo 
+![alt text](images/demo.gif)
 
 ## key technologies
 * TypeScript
@@ -18,11 +20,14 @@ steps to play around
 * Webpack 
 * Formik
 * GraphQl
+* React-testing library
+* Jest
 
 ## How to run
 * Clone the project and cd into project
 * npm install
 ### `yarn dev`
 * yarn dev and go to [link](*http://localhost:9000*)
+
 ### `yarn build`
 * yarn build for a production build
