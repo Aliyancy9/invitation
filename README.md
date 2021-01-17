@@ -1,6 +1,7 @@
 # Email Invitation App
 ## Overview
 The purpose of this app is to send email invitation to the customer with email validation
+
 Steps to play around
 
 1. Click request invitation
@@ -9,6 +10,9 @@ Steps to play around
 4. when sending email, all the input fields are disabled
 5. If everything works fine, the success dialog will pop up otherwise the server will return error message showing below
 6. Click 'ok' will close the dialog
+
+Things to mention: we call the validation everytime we click send button, we can also validate the fields every time when interacting the fields based on different design
+
 
 ## Demo 
 ![alt text](images/demo.gif)
