@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailDialog should show correct title 1`] = `
+<div>
+  <div
+    class="makeStyles-container-1"
+  >
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorInherit makeStyles-header-2 mui-fixed MuiPaper-elevation4"
+    >
+      <p
+        class="MuiTypography-root makeStyles-headerText-3 MuiTypography-body1"
+      >
+        Broccoli & Co.
+      </p>
+    </header>
+    <div
+      class="makeStyles-content-6"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 MuiTypography-colorTextSecondary"
+      >
+        A better way
+      </h3>
+      <h3
+        class="MuiTypography-root MuiTypography-h3 MuiTypography-colorTextSecondary"
+      >
+        to enjoy every day.
+      </h3>
+      <h6
+        class="MuiTypography-root makeStyles-text-7 MuiTypography-h6 MuiTypography-colorTextSecondary"
+      >
+        Be the first to know when we launch.
+      </h6>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-button-8"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Request an invite
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorInherit makeStyles-footer-4 mui-fixed MuiPaper-elevation4"
+    >
+      <div
+        class="makeStyles-footerText-5"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Made with ♥ in Melbourne.
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          © 2016 Broccoli & Co. All rights reserved.
+        </p>
+      </div>
+    </header>
+  </div>
+</div>
+`;

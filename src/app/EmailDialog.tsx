@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import * as React from 'react'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogTitle from '@material-ui/core/DialogTitle'
 import { makeStyles } from '@material-ui/styles'
-import fetchWrapper from './client'
+import registerEmail from './registerEmail'
 import { Formik, FormikHelpers } from 'formik'
 import * as Yup from 'yup'
 import { Typography, Divider } from '@material-ui/core'
@@ -91,9 +91,8 @@ const EmailDialog: React.FC<Props> = (
       name: email.name,
       email: email.email
     }
-
-    const res = await fetchWrapper(emailToSubmit)
-    console.log('res,', res)
+   
+    const res = await registerEmail(emailToSubmit)
     actions.setSubmitting(false)
     
     if(res.errorMessage) {
@@ -105,7 +104,6 @@ const EmailDialog: React.FC<Props> = (
   }
 
   const handleOnClose = async () => {
-    console.log('isSubmitionCompleted', isSubmitionCompleted)
     onClose()
     await new Promise(res => setTimeout(res, 500))
     setSubmitionCompleted(false) 
@@ -134,17 +132,16 @@ const EmailDialog: React.FC<Props> = (
               {(props) => {
                 const {
                   values,
-                  touched,
                   errors,
                   isSubmitting,
                   handleChange,
-                  handleBlur,
                   handleSubmit,
                   isValid,
                 } = props;
                 return (
                   <form onSubmit={handleSubmit} className={classes.form}>
                     <TextField
+                      data-testid='name-input'
                       label='Full name'
                       name='name'
                       variant='outlined'
@@ -157,6 +154,7 @@ const EmailDialog: React.FC<Props> = (
                     />
 
                     <TextField
+                      data-testid='email-input'
                       InputProps={{ classes: { input: classes.input } }}
                       error={!!errors.email }
                       label='Email'
@@ -168,11 +166,12 @@ const EmailDialog: React.FC<Props> = (
                       disabled={isSubmitting}
                     />
                     <TextField
+                      data-testid='confirmedEmail-input'
+                      InputProps={{ classes: { input: classes.input } }}
                       error={!!errors.confirmedEmail}
                       label='Confirm email'
                       name='confirmedEmail'
-                      variant='outlined'
-                      InputProps={{ classes: { input: classes.input } }}
+                      variant='outlined' 
                       value={values.confirmedEmail}
                       onChange={handleChange}
                       helperText={errors.confirmedEmail}

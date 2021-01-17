@@ -2,7 +2,6 @@ import * as React from 'react'
 import { makeStyles } from '@material-ui/styles'
 import {AppBar, Typography, Button } from '@material-ui/core'
 import EmailDialog from './EmailDialog'
-import HeartIcon from './Icon'
 
 const useStyles = makeStyles({
     container: {
@@ -51,10 +50,6 @@ const useStyles = makeStyles({
 
 })
 
-// export interface Props {
-//     onClick?: () => void
-// }
-
 const Main: React.FC = () => {
     const classes = useStyles({})
 
@@ -93,7 +88,6 @@ return (
                 Request an invite
             </Button>
         </div>
-            
             <EmailDialog 
                 isOpen={open}
                 onClose={onToggle}
@@ -104,15 +98,13 @@ return (
         >
             <div className={classes.footerText}>
                 <Typography >
-                    Made with in Melourne.  
+                Made with &hearts; in Melbourne.  
                 </Typography>
-                <HeartIcon />
                 <Typography>
-                    @2016 Broccoli & Co. All rights reserved.   
+                © 2016 Broccoli & Co. All rights reserved.   
                 </Typography>
             </div>
         </AppBar>
-
     </div>
 )}
 
