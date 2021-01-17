@@ -13,7 +13,7 @@ const registerEmail = async (registeredEmail: Email) => {
     method: "POST",
     body: JSON.stringify({ ...registeredEmail })
   })
-  console.log(response)
+  
   if (response.status !== 200) {
 
     return response.json().catch(console.error)

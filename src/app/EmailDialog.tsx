@@ -208,7 +208,7 @@ const EmailDialog: React.FC<Props> = (
                   You will be the one of the first to experience
                 </Typography>
                 <Typography variant = 'h6' color = 'textSecondary' className={classes.message}>
-                  Broccolli & Co. when we launch
+                  Broccoli & Co. when we launch
                 </Typography>
               <DialogActions  
                 classes={{
